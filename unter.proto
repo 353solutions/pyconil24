@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+enum Kind {
+    UNSPECIFIED = 0;
+    REGULAR = 1;
+    SHARED = 2;
+}
+
+message StartRequest {
+    string id = 1;
+    Kind kind = 2;
+    string driver_id = 3;
+    google.protobuf.Timestamp time = 4;
+}
