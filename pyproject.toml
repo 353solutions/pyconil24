@@ -1,8 +1,0 @@
-[project]
-name = "unter"
-version = "0.1.0"
-
-dependencies = [
-	"grpcio ~= 1.65",
-	"grpcio-reflection ~= 1.65",
-]

@@ -10,5 +10,5 @@ proto:
 
 env:
 	test -d .venv || python -m venv .venv
-	./.venv/bin/python -m pip install .
-	rm -rf build unter.egg-info/
+	./.venv/bin/python -m pip install requirements.txt
+	@echo "Don't forget to set IDE Python interpreter to ${PWD}/.venv/bin/python"

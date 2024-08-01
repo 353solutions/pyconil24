@@ -1,0 +1,19 @@
+// DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
+
+{
+  "build": {
+	"dockerfile": "Dockerfile",
+	"context": "..",
+	"args": { 
+	  "VARIANT": "3.12",
+	  "NODE_VERSION": "lts/*"
+	}
+  },
+  "extensions": [
+    "GitHub.github-vscode-theme",
+    "ms-toolsai.jupyter",
+    "ms-python.python",
+	"tamasfe.even-better-toml"
+  ],
+  "onCreateCommand" : "bash .devcontainer/init.sh"
+}
