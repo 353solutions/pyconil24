@@ -9,10 +9,15 @@ class Kind(Enum):
 
 
 @dataclass
-class Ride:
+class StartRide:
     id: str
     kind: Kind
     driver_id: str
     start_time: datetime
+
+
+@dataclass
+class EndRide:
+    id: str
     end_time: datetime
-    distance: float
+    distance: float  # in Km
