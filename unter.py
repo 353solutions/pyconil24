@@ -20,4 +20,4 @@ class StartRide:
 class EndRide:
     id: str
     end_time: datetime
-    distance: float  # in Km
+    distance: float  # in Miles
