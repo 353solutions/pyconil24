@@ -43,13 +43,14 @@ TBD
 - [Protocol Buffers](https://protobuf.dev/)
     - [Types](https://protobuf.dev/programming-guides/proto3/#scalar)
     - [protoc](https://github.com/protocolbuffers/protobuf/releases) compiler
+    - [timestamp_pb2](https://googleapis.dev/python/protobuf/latest/google/protobuf/timestamp_pb2.html)
 - [gRPC](https://grpc.io/)
 - [gRPC Python Quickstart](https://grpc.io/docs/languages/python/quickstart/)
 - [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md)
 - [gRPC status codes](https://grpc.github.io/grpc/core/md_doc_statuscodes.html)
+- [Service side context](https://grpc.github.io/grpc/python/grpc.html#service-side-context)
 - [gRPCurl](https://github.com/fullstorydev/grpcurl)
     - [More gRPC tools](https://github.com/grpc-ecosystem/awesome-grpc#tools)
-- [grpcurl](https://github.com/fullstorydev/grpcurl/releases)
 - [buf](https://buf.build/) - Helps with managing protobuf & gRPC
 
 # Data & Other
