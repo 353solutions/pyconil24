@@ -1,6 +1,5 @@
+*.db
 *.egg-info/
 .venv
 __pycache__/
 build
-playbook.md
-solutions/
