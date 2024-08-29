@@ -18,7 +18,7 @@ Miki Tebeka
 - Interceptors
 - Streaming
 - Metadata
-- Production
+- Production considerations
 
 > [!NOTE]
 > We probably won't manage to cover everything.
