@@ -45,9 +45,10 @@ TBD
     - [protoc](https://github.com/protocolbuffers/protobuf/releases) compiler
     - [timestamp_pb2](https://googleapis.dev/python/protobuf/latest/google/protobuf/timestamp_pb2.html)
 - [gRPC](https://grpc.io/)
+- [Core Concepts](https://grpc.io/docs/what-is-grpc/core-concepts/)
 - [gRPC Python Quickstart](https://grpc.io/docs/languages/python/quickstart/)
 - [gRPC Python Examples](https://github.com/grpc/grpc/tree/v1.66.0/examples/python)
-- [gRPC metadata](https://github.com/grpc/grpc-go/blob/master/Documentation/grpc-metadata.md)
+- [gRPC metadata](https://grpc.io/docs/guides/metadata)
 - [gRPC status codes](https://grpc.github.io/grpc/core/md_doc_statuscodes.html)
 - [Service side context](https://grpc.github.io/grpc/python/grpc.html#service-side-context)
 - [gRPCurl](https://github.com/fullstorydev/grpcurl)

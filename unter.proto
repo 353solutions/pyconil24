@@ -3,14 +3,14 @@ syntax = "proto3";
 import "google/protobuf/timestamp.proto";
 
 enum Kind {
-    KIND_UNSPECIFIED = 0;
-    KIND_REGULAR = 1;
-    KIND_SHARED = 2;
+  KIND_UNSPECIFIED = 0;
+  KIND_REGULAR = 1;
+  KIND_SHARED = 2;
 }
 
 message StartRideRequest {
-    string id = 1;
-    Kind kind = 2;
-    string driver_id = 3;
-    google.protobuf.Timestamp time = 4;
+  string id = 1;
+  Kind kind = 2;
+  string driver_id = 3;
+  google.protobuf.Timestamp time = 4;
 }
