@@ -1,5 +1,6 @@
 *.db
 *.egg-info/
+.ruff_cache/
 .venv
 __pycache__/
 build
