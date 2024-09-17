@@ -1,6 +1,7 @@
 syntax = "proto3";
 
 import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
 
 enum Kind {
   KIND_UNSPECIFIED = 0;
@@ -29,10 +30,24 @@ message EndRideResponse {
   string id = 1;
 }
 
+message Location {
+  string ride_id = 1;
+  double lat = 2;
+  double lng = 3;
+}
+
+message TrackReply {
+  uint32 count = 1;
+  google.protobuf.Duration duration = 3;
+}
+
+
+
 service Unter {
   // Unary
   rpc StartRide(StartRideRequest) returns (StartRideResponse) {}
   rpc EndRide(EndRideRequest) returns (EndRideResponse) {}
+  rpc Track(stream Location) returns (TrackReply) {}
 }
 
 

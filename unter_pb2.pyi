@@ -1,4 +1,5 @@
 from google.protobuf import timestamp_pb2 as _timestamp_pb2
+from google.protobuf import duration_pb2 as _duration_pb2
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -48,3 +49,21 @@ class EndRideResponse(_message.Message):
     ID_FIELD_NUMBER: _ClassVar[int]
     id: str
     def __init__(self, id: _Optional[str] = ...) -> None: ...
+
+class Location(_message.Message):
+    __slots__ = ("ride_id", "lat", "lng")
+    RIDE_ID_FIELD_NUMBER: _ClassVar[int]
+    LAT_FIELD_NUMBER: _ClassVar[int]
+    LNG_FIELD_NUMBER: _ClassVar[int]
+    ride_id: str
+    lat: float
+    lng: float
+    def __init__(self, ride_id: _Optional[str] = ..., lat: _Optional[float] = ..., lng: _Optional[float] = ...) -> None: ...
+
+class TrackReply(_message.Message):
+    __slots__ = ("count", "duration")
+    COUNT_FIELD_NUMBER: _ClassVar[int]
+    DURATION_FIELD_NUMBER: _ClassVar[int]
+    count: int
+    duration: _duration_pb2.Duration
+    def __init__(self, count: _Optional[int] = ..., duration: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...

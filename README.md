@@ -10,10 +10,10 @@ Miki Tebeka
 
 ---
 
-### Meeting Info:
-To join the video meeting, click this link: https://meet.google.com/pwn-bnhx-cvt
-Otherwise, to join by phone, dial +972 73-359-9899 and enter this PIN: 404 245 371 2391#
-To view more phone numbers, click this link: https://tel.meet/pwn-bnhx-cvt?hs=5
+### Final Exercise
+
+- Use db.py to store data in database
+- Implement a `GetRide` endpoint that returns ride information from the database
 
 ### Agenda
 

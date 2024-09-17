@@ -3,6 +3,9 @@ import grpc
 
 import unter_pb2 as pb
 import unter_pb2_grpc as rpc
+from validators import validate_start, ValidationError
+from time import monotonic
+from typing import Iterator
 
 
 
@@ -15,6 +18,18 @@ logging.basicConfig(
 class Unter(rpc.UnterServicer):
     def StartRide(self, request: pb.StartRideRequest, context: grpc.ServicerContext) -> pb.StartRideResponse:
         logging.info('start: id=%s', request.id)
+
+        meta = dict(context.invocation_metadata())
+        logging.info('token: %s', meta.get('token'))
+
+
+        try:
+            validate_start(request)
+        except ValidationError as err:
+            context.set_code(grpc.StatusCode.INVALID_ARGUMENT)
+            context.set_details(str(err))
+            raise  # re-raise exception
+        
         resp = pb.StartRideResponse(
             id=request.id,
         )
@@ -26,6 +41,21 @@ class Unter(rpc.UnterServicer):
             id=request.id,
         )
         return resp
+
+    def Track(self, request_iterator: Iterator[pb.Location], context: grpc.ServicerContext) -> pb.TrackReply:
+        start_time = monotonic()
+        count = 0
+        for loc in request_iterator:
+            logging.info('location: %.4f/%.4f', loc.lat, loc.lng)
+            count += 1
+
+        duration = monotonic() - start_time
+        resp = pb.TrackReply(
+            count=count,
+        )
+        resp.duration.FromMilliseconds(int(duration*1000))
+        return resp
+
 
 class LoggingInterceptor(grpc.ServerInterceptor):
     def intercept_service(

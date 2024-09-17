@@ -23,25 +23,30 @@ _sym_db = _symbol_database.Default()
 
 
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
+from google.protobuf import duration_pb2 as google_dot_protobuf_dot_duration__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bunter.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"p\n\x10StartRideRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x04kind\x18\x02 \x01(\x0e\x32\x05.Kind\x12\x11\n\tdriver_id\x18\x03 \x01(\t\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"X\n\x0e\x45ndRideRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x64istance\x18\x02 \x01(\x01\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x1f\n\x11StartRideResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x1d\n\x0f\x45ndRideResponse\x12\n\n\x02id\x18\x01 \x01(\t*?\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\x10\n\x0cKIND_REGULAR\x10\x01\x12\x0f\n\x0bKIND_SHARED\x10\x02\x32m\n\x05Unter\x12\x34\n\tStartRide\x12\x11.StartRideRequest\x1a\x12.StartRideResponse\"\x00\x12.\n\x07\x45ndRide\x12\x0f.EndRideRequest\x1a\x10.EndRideResponse\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0bunter.proto\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1egoogle/protobuf/duration.proto\"p\n\x10StartRideRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x13\n\x04kind\x18\x02 \x01(\x0e\x32\x05.Kind\x12\x11\n\tdriver_id\x18\x03 \x01(\t\x12(\n\x04time\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"X\n\x0e\x45ndRideRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x10\n\x08\x64istance\x18\x02 \x01(\x01\x12(\n\x04time\x18\x03 \x01(\x0b\x32\x1a.google.protobuf.Timestamp\"\x1f\n\x11StartRideResponse\x12\n\n\x02id\x18\x01 \x01(\t\"\x1d\n\x0f\x45ndRideResponse\x12\n\n\x02id\x18\x01 \x01(\t\"5\n\x08Location\x12\x0f\n\x07ride_id\x18\x01 \x01(\t\x12\x0b\n\x03lat\x18\x02 \x01(\x01\x12\x0b\n\x03lng\x18\x03 \x01(\x01\"H\n\nTrackReply\x12\r\n\x05\x63ount\x18\x01 \x01(\r\x12+\n\x08\x64uration\x18\x03 \x01(\x0b\x32\x19.google.protobuf.Duration*?\n\x04Kind\x12\x14\n\x10KIND_UNSPECIFIED\x10\x00\x12\x10\n\x0cKIND_REGULAR\x10\x01\x12\x0f\n\x0bKIND_SHARED\x10\x02\x32\x92\x01\n\x05Unter\x12\x34\n\tStartRide\x12\x11.StartRideRequest\x1a\x12.StartRideResponse\"\x00\x12.\n\x07\x45ndRide\x12\x0f.EndRideRequest\x1a\x10.EndRideResponse\"\x00\x12#\n\x05Track\x12\t.Location\x1a\x0b.TrackReply\"\x00(\x01\x62\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'unter_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   DESCRIPTOR._loaded_options = None
-  _globals['_KIND']._serialized_start=316
-  _globals['_KIND']._serialized_end=379
-  _globals['_STARTRIDEREQUEST']._serialized_start=48
-  _globals['_STARTRIDEREQUEST']._serialized_end=160
-  _globals['_ENDRIDEREQUEST']._serialized_start=162
-  _globals['_ENDRIDEREQUEST']._serialized_end=250
-  _globals['_STARTRIDERESPONSE']._serialized_start=252
-  _globals['_STARTRIDERESPONSE']._serialized_end=283
-  _globals['_ENDRIDERESPONSE']._serialized_start=285
-  _globals['_ENDRIDERESPONSE']._serialized_end=314
-  _globals['_UNTER']._serialized_start=381
-  _globals['_UNTER']._serialized_end=490
+  _globals['_KIND']._serialized_start=477
+  _globals['_KIND']._serialized_end=540
+  _globals['_STARTRIDEREQUEST']._serialized_start=80
+  _globals['_STARTRIDEREQUEST']._serialized_end=192
+  _globals['_ENDRIDEREQUEST']._serialized_start=194
+  _globals['_ENDRIDEREQUEST']._serialized_end=282
+  _globals['_STARTRIDERESPONSE']._serialized_start=284
+  _globals['_STARTRIDERESPONSE']._serialized_end=315
+  _globals['_ENDRIDERESPONSE']._serialized_start=317
+  _globals['_ENDRIDERESPONSE']._serialized_end=346
+  _globals['_LOCATION']._serialized_start=348
+  _globals['_LOCATION']._serialized_end=401
+  _globals['_TRACKREPLY']._serialized_start=403
+  _globals['_TRACKREPLY']._serialized_end=475
+  _globals['_UNTER']._serialized_start=543
+  _globals['_UNTER']._serialized_end=689
 # @@protoc_insertion_point(module_scope)

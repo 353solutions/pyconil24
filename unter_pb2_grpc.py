@@ -44,6 +44,11 @@ class UnterStub(object):
                 request_serializer=unter__pb2.EndRideRequest.SerializeToString,
                 response_deserializer=unter__pb2.EndRideResponse.FromString,
                 _registered_method=True)
+        self.Track = channel.stream_unary(
+                '/Unter/Track',
+                request_serializer=unter__pb2.Location.SerializeToString,
+                response_deserializer=unter__pb2.TrackReply.FromString,
+                _registered_method=True)
 
 
 class UnterServicer(object):
@@ -62,6 +67,12 @@ class UnterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def Track(self, request_iterator, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_UnterServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -74,6 +85,11 @@ def add_UnterServicer_to_server(servicer, server):
                     servicer.EndRide,
                     request_deserializer=unter__pb2.EndRideRequest.FromString,
                     response_serializer=unter__pb2.EndRideResponse.SerializeToString,
+            ),
+            'Track': grpc.stream_unary_rpc_method_handler(
+                    servicer.Track,
+                    request_deserializer=unter__pb2.Location.FromString,
+                    response_serializer=unter__pb2.TrackReply.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -130,6 +146,33 @@ class Unter(object):
             '/Unter/EndRide',
             unter__pb2.EndRideRequest.SerializeToString,
             unter__pb2.EndRideResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def Track(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(
+            request_iterator,
+            target,
+            '/Unter/Track',
+            unter__pb2.Location.SerializeToString,
+            unter__pb2.TrackReply.FromString,
             options,
             channel_credentials,
             insecure,
