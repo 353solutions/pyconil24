@@ -13,3 +13,6 @@ env:
 	test -d .venv || python -m venv .venv
 	./.venv/bin/python -m pip install -r requirements.txt
 	@echo "Don't forget to set IDE Python interpreter to ${PWD}/.venv/bin/python"
+
+start:
+	grpcurl --plaintext -d @ localhost:9876 Unter.StartRide < data/start.json
