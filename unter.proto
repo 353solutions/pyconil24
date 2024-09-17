@@ -14,3 +14,20 @@ message StartRideRequest {
   string driver_id = 3;
   google.protobuf.Timestamp time = 4;
 }
+
+message EndRideRequest {
+  string id = 1;
+  double distance = 2;
+  google.protobuf.Timestamp time = 3;
+}
+
+message StartRideResponse {
+  string id = 1;
+}
+
+service Unter {
+  // Unary
+  rpc StartRide(StartRideRequest) returns (StartRideResponse) {}
+}
+
+

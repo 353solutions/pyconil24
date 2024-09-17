@@ -26,3 +26,19 @@ class StartRideRequest(_message.Message):
     driver_id: str
     time: _timestamp_pb2.Timestamp
     def __init__(self, id: _Optional[str] = ..., kind: _Optional[_Union[Kind, str]] = ..., driver_id: _Optional[str] = ..., time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class EndRideRequest(_message.Message):
+    __slots__ = ("id", "distance", "time")
+    ID_FIELD_NUMBER: _ClassVar[int]
+    DISTANCE_FIELD_NUMBER: _ClassVar[int]
+    TIME_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    distance: float
+    time: _timestamp_pb2.Timestamp
+    def __init__(self, id: _Optional[str] = ..., distance: _Optional[float] = ..., time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class StartRideResponse(_message.Message):
+    __slots__ = ("id",)
+    ID_FIELD_NUMBER: _ClassVar[int]
+    id: str
+    def __init__(self, id: _Optional[str] = ...) -> None: ...
