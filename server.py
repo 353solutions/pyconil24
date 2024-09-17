@@ -14,6 +14,7 @@ logging.basicConfig(
 
 class Unter(rpc.UnterServicer):
     def StartRide(self, request: pb.StartRideRequest, context: grpc.ServicerContext):
+        logging.info('start: id=%s', request.id)
         resp = pb.EndRideRequest(
             id=request.id,
         )
