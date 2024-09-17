@@ -13,12 +13,28 @@ logging.basicConfig(
 )
 
 class Unter(rpc.UnterServicer):
-    def StartRide(self, request: pb.StartRideRequest, context: grpc.ServicerContext):
+    def StartRide(self, request: pb.StartRideRequest, context: grpc.ServicerContext) -> pb.StartRideResponse:
         logging.info('start: id=%s', request.id)
         resp = pb.StartRideResponse(
             id=request.id,
         )
         return resp
+
+    def EndRide(self, request: pb.EndRideRequest, context: grpc.ServicerContext) -> pb.EndRideResponse:
+        logging.info('start: id=%s', request.id)
+        resp = pb.EndRideResponse(
+            id=request.id,
+        )
+        return resp
+
+class LoggingInterceptor(grpc.ServerInterceptor):
+    def intercept_service(
+        self, continuation, handler_call_details: grpc.HandlerCallDetails
+    ):
+        logging.info('call %s', handler_call_details.method)
+        return continuation(handler_call_details)
+
+
 
 if __name__ == '__main__':
     from concurrent.futures import ThreadPoolExecutor
@@ -28,6 +44,7 @@ if __name__ == '__main__':
 
     server = grpc.server(
         thread_pool=ThreadPoolExecutor(),
+        interceptors=[LoggingInterceptor()],
     )
 
     unter = Unter()

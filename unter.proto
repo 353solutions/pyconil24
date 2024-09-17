@@ -25,9 +25,14 @@ message StartRideResponse {
   string id = 1;
 }
 
+message EndRideResponse {
+  string id = 1;
+}
+
 service Unter {
   // Unary
   rpc StartRide(StartRideRequest) returns (StartRideResponse) {}
+  rpc EndRide(EndRideRequest) returns (EndRideResponse) {}
 }
 
 
